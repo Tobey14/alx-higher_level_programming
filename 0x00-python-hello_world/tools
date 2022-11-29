@@ -1,3 +1,5 @@
+f'Beautiful is better than ugly.\n'
+    f'Explicit is better than implicit.\n' 
 f'Simple is better than complex.\n'
     f'Complex is better than complicated.\n'
     f'Flat is better than nested.\n'
