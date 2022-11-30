@@ -1,5 +1,11 @@
 #!/usr/bin/python3
 def uppercase(str):
-    if ord(str) in range(65, 91):
-        return True
-    return False
+    output=""
+    for ch in str:
+        if ch  in 'abcdefghijklmnopqrstuvwqxyz':
+            a= ord(ch)
+            b = a- 32
+            output = output+chr(b)
+        else:
+            output=output+ch
+    print("{:c}\n".format(output))
