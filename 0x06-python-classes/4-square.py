@@ -25,7 +25,7 @@ class Square:
 
     @property
     def size(self):
-        """retrieves the value of the private instance size of the square
+        """getter of __size
         Returns:
             The size of the square
         """
@@ -33,9 +33,11 @@ class Square:
 
     @size.setter
     def size(self, value):
-        """sets the value of the private instance size of the square
+        """setter of __size
+        Args:
+            value (int): the size of a size of the square
         Returns:
-            The size of the square
+            None
         """
         if type(value) is not int:
             raise TypeError("size must be an integer")
