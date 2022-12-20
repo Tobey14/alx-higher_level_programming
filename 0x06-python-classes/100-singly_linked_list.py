@@ -1,64 +1,77 @@
 #!/usr/bin/python3
-"""Defines a two classes Node and SinglyLinkedList"""
+"""Class for Node"""
 
 
 class Node:
-    """Represents a Node Class
-    Attributes:
-        __data (int): data in a node
+    """ defines a node of a singly linked list
+        Attributes:
+            data (int): data
+            next_node (Node, optional): node
     """
+
     def __init__(self, data, next_node=None):
-        """initializes the node
-        Args:
-            data (int): data of the node
-        Returns:
-            None
+        """Initialize Node
+        args:
+            data (int): data stored in node
+            next_node (Node): next node
         """
-        self.__data = data
-        self.__next_node = next_node
+        self.data = data
+        self.next_node = next_node
 
     @property
     def data(self):
-        """getter for the node class data"""
+        """data getter
+        returns:
+            data (int)
+        """
         return self.__data
-    
+
     @data.setter
-    def data(self, value): 
-        """setter for the node class data"""
-        if type(value) is not int:
+    def data(self, value):
+        """data setter
+        args:
+            value (int): value to set
+        returns:
+            None
+        """
+        if type(value) != int:
             raise TypeError("data must be an integer")
-        else:
-            self.__data = value
+        self.__data = value
 
     @property
     def next_node(self):
-        """getter for the node class next_node"""
+        """data getter
+        returns:
+            data (int)
+        """
         return self.__next_node
-    
-    @next_node.setter
-    def next_node(self, value): 
-        """setter for the node class next_node"""
-        if not isinstance(value, Node) and value is not None:
-            raise TypeError("next_node must be a Node object")
-        else:
-            self.__next_node = value
 
-class SinglyLinkedList:
-    """Represents a single linked list Class
-    Attributes:
-        __head (int): head in a node
-    """
-    def __init__(self, head=None):
-        """initializes the single linked list
-        Args:
-            head (int): head of the linked list
-        Returns:
+    @next_node.setter
+    def next_node(self, value):
+        """data setter
+        args:
+            value (Node): value to set
+        returns:
             None
         """
-        self.__head = head
-    
+        if not isinstance(value, Node) and value is not None:
+            raise TypeError("next_node must be a Node object")
+        self.__next_node = value
+
+
+class SinglyLinkedList:
+    """Singly linked list class
+    """
+
+    def __init__(self):
+        """Initialize linked list"""
+        self.__head = None
+
     def sorted_insert(self, value):
-        """inserts a new Node into the correct sorted position in the list"""
+        """insert node in coorect sorted position
+        args:
+            value (int): value for new node
+        """
         new = Node(value)
         if self.__head is None:
             new.next_node = None
@@ -74,7 +87,7 @@ class SinglyLinkedList:
 
             new.next_node = tmp.next_node
             tmp.next_node = new
-    
+
     def __str__(self):
         """Define the print() representation of a SinglyLinkedList."""
         values = []
