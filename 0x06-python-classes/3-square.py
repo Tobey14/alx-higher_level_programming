@@ -29,9 +29,8 @@ class Square:
         self.__size = size
 
     def area(self):
-        """ Public method that return the area of the square
-        Args:
-            none
-        Returns: size raised to power 2
+        """calculates the square's area
+        Returns:
+            The area of the square
         """
-        return self.__size **2
+        return (self.__size) ** 2
