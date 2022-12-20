@@ -27,3 +27,11 @@ class Square:
             """
             raise ValueError('size must be >= 0')
         self.__size = size
+
+    def area(self):
+        """ Public method that return the area of the square
+        Args:
+            none
+        Returns: size raised to power 2
+        """
+        return self.__size **2
