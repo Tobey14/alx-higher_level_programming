@@ -1,4 +1,4 @@
 #!/usr/bin/node
-import { createWriteStream } from 'fs';
-import request from 'request';
-request(process.argv[2]).pipe(createWriteStream(process.argv[3]));
+const fs = require('fs');
+const request = require('request');
+request(process.argv[2]).pipe(fs.createWriteStream(process.argv[3]));
